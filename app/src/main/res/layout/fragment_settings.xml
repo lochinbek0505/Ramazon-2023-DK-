@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#F6F5F5"
+	android:orientation="vertical"
+	tools:context=".ui.fragment.SettingsFragment">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="@drawable/ic_bg3">
+
+		<TextView
+			android:id="@+id/tv_tb"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:text="Sozlamalar"
+			android:textColor="@color/white"
+			android:textSize="20sp" />
+
+	</RelativeLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center"
+		android:orientation="vertical">
+
+		<androidx.cardview.widget.CardView
+			android:id="@+id/cv_location"
+			android:layout_width="match_parent"
+			android:layout_height="70dp"
+			android:layout_marginStart="15dp"
+			android:layout_marginTop="40dp"
+			android:layout_marginEnd="15dp"
+			android:layout_marginBottom="15dp"
+			android:background="@color/white"
+			app:cardCornerRadius="20dp"
+			app:cardElevation="5dp">
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<ImageView
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_alignParentStart="true"
+					android:layout_centerVertical="true"
+					android:layout_marginStart="15dp"
+					android:src="@drawable/ic_baseline_location_on_24"
+					app:tint="@color/purple_500" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:layout_marginStart="70dp"
+					android:text="Hududni o'zgartirish"
+					android:textColor="@color/purple_500"
+					android:textSize="20sp" />
+
+				<ImageView
+					android:layout_width="35dp"
+					android:layout_height="35dp"
+					android:layout_alignParentEnd="true"
+					android:layout_centerVertical="true"
+					android:layout_marginEnd="15dp"
+					android:src="@drawable/ic_baseline_navigate_next_24"
+					app:tint="@color/purple_500" />
+
+			</RelativeLayout>
+
+
+		</androidx.cardview.widget.CardView>
+
+		<androidx.cardview.widget.CardView
+			android:layout_width="match_parent"
+			android:layout_height="70dp"
+			android:layout_margin="15dp"
+			android:background="@color/white"
+			app:cardCornerRadius="20dp"
+			app:cardElevation="5dp">
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<ImageView
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_alignParentStart="true"
+					android:layout_centerVertical="true"
+					android:layout_marginStart="15dp"
+					android:src="@drawable/ic_baseline_phone_android_24"
+					app:tint="@color/purple_500" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:layout_marginStart="70dp"
+					android:text="1.2"
+					android:textColor="@color/purple_500"
+					android:textSize="20sp" />
+
+			</RelativeLayout>
+
+
+		</androidx.cardview.widget.CardView>
+
+		<androidx.cardview.widget.CardView
+			android:id="@+id/aloqa_call"
+			android:layout_width="match_parent"
+			android:layout_height="70dp"
+			android:layout_margin="15dp"
+			android:background="@color/white"
+			app:cardCornerRadius="20dp"
+			app:cardElevation="5dp">
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<ImageView
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:layout_alignParentStart="true"
+					android:layout_centerVertical="true"
+					android:layout_marginStart="15dp"
+					android:src="@drawable/ic_baseline_call_24"
+					app:tint="@color/purple_500" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:layout_marginStart="70dp"
+					android:text="+998 93 494 07 65"
+					android:textColor="@color/purple_500"
+					android:textSize="20sp" />
+
+			</RelativeLayout>
+
+
+		</androidx.cardview.widget.CardView>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginStart="10dp"
+			android:layout_marginTop="20dp"
+			android:layout_marginEnd="20dp"
+			android:text="2023 developed by Lochinbek "
+			android:textColor="@color/black" />
+
+		<LinearLayout
+			android:id="@+id/iv_instagramm"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:layout_marginTop="50dp"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_vertical"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:src="@drawable/img_instagram" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="10dp"
+					android:layout_marginEnd="20dp"
+					android:text="Instagram"
+					android:textColor="@color/black" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/iv_telegram"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_vertical"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:src="@drawable/img_telegram" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="10dp"
+					android:layout_marginEnd="20dp"
+					android:text="Telegram"
+					android:textColor="@color/black" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/iv_web"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_vertical"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:src="@drawable/img_youtube" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="10dp"
+					android:layout_marginEnd="20dp"
+					android:text="You tube"
+					android:textColor="@color/black" />
+			</LinearLayout>
+		</LinearLayout>
+
+
+	</LinearLayout>
+
+
+</LinearLayout>

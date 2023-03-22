@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:id="@+id/navigation_home"
+		android:icon="@drawable/ic_home_black_24dp"
+		android:title="Bosh sahifa" />
+
+	<item
+		android:id="@+id/navigation_dashboard"
+		android:icon="@drawable/ic_icon_calendar"
+		android:title="Kalendar" />
+
+	<item
+		android:id="@+id/duolarFragment"
+		android:icon="@drawable/ic_duo"
+		android:title="Duolar" />
+	<item
+		android:id="@+id/navigation_notifications"
+		android:icon="@drawable/ic_baseline_settings_24"
+		android:title="Sozlamalar" />
+
+
+</menu>

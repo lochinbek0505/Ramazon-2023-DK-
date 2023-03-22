@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#ECEAEA"
+	android:orientation="vertical"
+	tools:context=".ui.fragment.DuolarFragment">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="@drawable/ic_bg3"
+		>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:text="Duolar"
+			android:textColor="@color/white"
+			android:textSize="20sp" />
+
+	</RelativeLayout>
+
+	<androidx.core.widget.NestedScrollView
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+		<androidx.cardview.widget.CardView
+			android:id="@+id/card_saharlik"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="5dp"
+			android:layout_marginBottom="10dp"
+			android:layout_marginTop="10dp"
+			android:clickable="true"
+			android:focusable="true"
+			app:cardCornerRadius="12dp"
+			app:cardElevation="4dp"
+			app:cardUseCompatPadding="true">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				android:padding="15dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:fontFamily="@font/ofont"
+						android:text="Saharlik (og\'iz yopish) duosi"
+						android:textColor="@color/purple_700"
+						android:textSize="18dp" />
+
+					<ImageView
+						android:id="@+id/img_saharlik_sound"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/ic_volume"
+						app:tint="@color/purple_500" />
+
+				</LinearLayout>
+
+
+				<TextView
+					android:id="@+id/tv_saharlik"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"
+					android:fontFamily="@font/cr"
+					android:justificationMode="inter_word"
+					android:text="@string/duo_saharlik"
+					android:textColor="@color/purple_700"
+					android:textSize="18dp" />
+
+
+				<View
+					android:id="@+id/view_2"
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginVertical="5dp"
+					android:background="#1A000000" />
+
+
+				<TextView
+					android:id="@+id/tv_saharlik_manosi"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/cr"
+					android:justificationMode="inter_word"
+					android:text="@string/duo_saharlik_manosi"
+					android:textColor="@color/purple_700"
+					android:textSize="18dp" />
+
+			</LinearLayout>
+
+		</androidx.cardview.widget.CardView>
+
+		<androidx.cardview.widget.CardView
+			android:id="@+id/card_iftorlik"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="5dp"
+			android:backgroundTint="@color/white"
+			app:cardElevation="4dp"
+			android:clickable="true"
+			android:focusable="true"
+			app:cardCornerRadius="15dp"
+			app:cardUseCompatPadding="true">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				android:padding="12dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:fontFamily="@font/ofont"
+						android:text="Iftorlik (og\'iz ochish) duosi"
+						android:textColor="@color/purple_700"
+						android:textSize="18dp" />
+
+					<ImageView
+						android:id="@+id/img_iftorlik_sound"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/ic_volume"
+						app:tint="@color/purple_500" />
+
+				</LinearLayout>
+
+				<TextView
+					android:id="@+id/txtv_iftorlik"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"
+					android:fontFamily="@font/cr"
+					android:justificationMode="inter_word"
+					android:text="@string/duo_iftorlik"
+					android:textColor="@color/purple_700"
+					android:textSize="18dp" />
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginVertical="5dp"
+					android:background="#1A000000" />
+
+				<TextView
+					android:id="@+id/tv_iftorlik_manosi"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/cr"
+					android:justificationMode="inter_word"
+					android:text="@string/duo_iftorlik_manosi"
+					android:textColor="@color/purple_500"
+					android:textSize="18dp" />
+
+			</LinearLayout>
+
+		</androidx.cardview.widget.CardView>
+
+	</LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>

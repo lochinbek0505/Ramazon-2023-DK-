@@ -35,7 +35,6 @@ class CalendarFragment : Fragment() {
     private var country: String = ""
 
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -120,6 +119,9 @@ class CalendarFragment : Fragment() {
                 index = 39
 
             }
+            "Buxoro viloyati" ->{
+                index=22
+            }
             "Samarqand viloyati" -> {
 
                 index = 12
@@ -131,7 +133,6 @@ class CalendarFragment : Fragment() {
         return root
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     private fun loadRv(index: Int) {
         val listdate: ArrayList<String> = ArrayList()
         val listSaharlikTime: ArrayList<String> = ArrayList()
@@ -167,7 +168,6 @@ class CalendarFragment : Fragment() {
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.N)
     fun customData(data: String, index:Int): String {
 
 
@@ -203,7 +203,11 @@ class CalendarFragment : Fragment() {
 
 
 
-        return formatter.format(calendar.time)
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            formatter.format(calendar.time)
+        } else {
+            TODO("VERSION.SDK_INT < N")
+        }
     }
 
     fun toMS(array: CharArray, index: Int): Long {

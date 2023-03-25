@@ -10,6 +10,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.AssetManager
 import android.media.MediaPlayer
+import android.opengl.Visibility
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -19,11 +20,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.wordpress.lochindev.ramazon_taqvimi.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
@@ -57,7 +60,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var sharedPreferense: SharedPreferences
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -157,6 +159,9 @@ class HomeFragment : Fragment() {
 
                 index = 39
 
+            }
+            "Buxoro viloyati" -> {
+                index = -2
             }
             "Samarqand viloyati" -> {
 
@@ -316,31 +321,79 @@ class HomeFragment : Fragment() {
 
 
     fun remaining(aS: Long, aF: Long) {
+
         val new_time = SimpleDateFormat("HH:mm").format(Date()).toString()
         var charArray = new_time.toCharArray()
         val currentTime: Long = toMS(charArray)
 
         if (aS > currentTime) {
             val ms: Long = aS - currentTime
-
+            binding.tvSaharlikRemaining.visibility = View.VISIBLE
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 binding.tvSaharlikRemaining.isCountDown = true
             }
             binding.tvSaharlikRemaining.base = SystemClock.elapsedRealtime() + ms
+
+            binding.tvSaharlikRemaining.setOnChronometerTickListener {
+
+                val new_time1 = SimpleDateFormat("HH:mm").format(Date()).toString()
+                var charArray1 = new_time1.toCharArray()
+                val currentTime1: Long = toMS(charArray1)
+
+                if (currentTime1 == aS) {
+
+                    binding.tvSaharlikRemaining.visibility = View.INVISIBLE
+                    val ms: Long = aF - currentTime1
+                    binding.tvIftorlikRemaining.visibility=View.VISIBLE
+                    countIf(ms)
+
+                }
+
+            }
+
             binding.tvSaharlikRemaining.start()
         }
-        if (aF > currentTime && aS < currentTime) {
+        if (aF > currentTime && aS <= currentTime) {
             val ms: Long = aF - currentTime
-
+            binding.tvIftorlikRemaining.visibility = View.VISIBLE
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 binding.tvIftorlikRemaining.isCountDown = true
+
+                binding.tvIftorlikRemaining.base = SystemClock.elapsedRealtime() + ms
+                binding.tvIftorlikRemaining.start()
+
+                binding.tvIftorlikRemaining.setOnChronometerTickListener {
+
+                    val new_time1 = SimpleDateFormat("HH:mm").format(Date()).toString()
+                    var charArray1 = new_time1.toCharArray()
+                    val currentTime1: Long = toMS(charArray1)
+
+                    if (currentTime1 == aF) {
+
+                        binding.tvIftorlikRemaining.visibility = View.INVISIBLE
+
+
+                    }
+
+
+                }
             }
-            binding.tvIftorlikRemaining.base = SystemClock.elapsedRealtime() + ms
-            binding.tvIftorlikRemaining.start()
+
         }
+
 
     }
 
+
+    fun countIf(ms: Long) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            binding.tvIftorlikRemaining.isCountDown = true
+        }
+
+        binding.tvIftorlikRemaining.base = SystemClock.elapsedRealtime() + ms
+        binding.tvIftorlikRemaining.start()
+
+    }
 
     private fun loadJSONFromAsset(): String {
         val json: String?
@@ -387,7 +440,6 @@ class HomeFragment : Fragment() {
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.N)
     fun customData(data: String, index: Int): String {
 
 
@@ -407,7 +459,11 @@ class HomeFragment : Fragment() {
         }
 
 
-        return formatter.format(calendar.time)
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            formatter.format(calendar.time)
+        } else {
+            TODO("VERSION.SDK_INT < N")
+        }
     }
 
     fun toMS2(array: CharArray, index: Int): Long {
